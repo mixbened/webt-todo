@@ -1,0 +1,8 @@
+<section class="container">
+    <button type="button" class="btn btn-primary my-4" routerLink="/edit">+ Add Todo</button>
+    <div class="row">
+        <div *ngFor="let todo of response_array" class="col-12 col-sm-6 col-md-4 mb-5">
+            <app-todo-item [todo]="todo"></app-todo-item>
+        </div>
+    </div>
+</section>

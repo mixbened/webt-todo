@@ -20,11 +20,13 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 app.get("/backend/todos/all", controller.read);
 
+app.get("/backend/todos/:id", controller.readOne);
+
 app.post("/backend/todos/create", controller.create);
 
-app.put("/backend/todos/update/:id", controller.update);
+app.post("/backend/todos/edit/:id", controller.update);
 
-app.delete("/backend/todos/delete/:id", controller.delete);
+app.get("/backend/todos/delete/:id", controller.delete);
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
 

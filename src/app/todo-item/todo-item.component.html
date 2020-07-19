@@ -1,0 +1,21 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+      <div><h5 class="card-title">{{ todo.title }}</h5></div>
+      <div><small>Due Date: {{ todo.date.toLocaleDateString() }}</small></div>
+    </div>
+    <div class="card-body">
+      <h6 class="card-subtitle mb-2 text-muted" *ngIf="todo.done"><span class="badge badge-success">Done</span></h6>
+      <h6 class="card-subtitle mb-2 text-muted" *ngIf="!todo.done"><span class="badge badge-warning">Not Done</span></h6>
+      <p class="card-text">{{ todo.text }}</p>
+      <div class="d-flex justify-content-between">
+          <div>
+              <a class="card-link text-primary" *ngIf="todo.done"  (click)="checkTodo(false)">Open</a>
+              <a class="card-link text-primary" *ngIf="!todo.done" (click)="checkTodo(true)">Close</a>
+              <a class="card-link text-primary" (click)="editTodo()">Edit</a>
+          </div>
+          <div>
+            <button type="button" class="btn btn-danger px-2 p-0" (click)="deleteTodo()">X</button>
+        </div>
+      </div>
+    </div>
+</div>

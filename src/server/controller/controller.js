@@ -17,6 +17,11 @@ const controller = {
         let result = await TodoItem.find().exec()
         res.status(200).send(result)
     },
+    readOne: async function(req, res){
+        let id = req.params.id
+        let result = await TodoItem.findById(id).exec()
+        res.status(200).send(result)
+    },
     delete: async function(req, res){
         let id = req.params.id
         let result = await TodoItem.deleteOne({_id: id}).exec()

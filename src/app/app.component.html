@@ -1,7 +1,7 @@
-{{ title }}
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1" routerLink="/">Organize your TODOs - Overview</span>
+</nav>
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>
 
-<ul class="list-group">
-  <li class="list-group-item" *ngFor="let msg of response_array">
-    {{ msg }}
-  </li>
-</ul>
